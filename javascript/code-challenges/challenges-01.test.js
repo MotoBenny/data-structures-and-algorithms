@@ -91,15 +91,15 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
-  arr.forEach((element) => {
-    arr.push(element + value);
-  });
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-  let localArr = [];
-  arr.forEach(() => localArr.push(callback(localArr, num)));
+  let localArr = arr;
+  for (let i = 0; i < times; i++) {
+    callback(localArr, num);
+  }
   return localArr;
 };
 
@@ -121,8 +121,9 @@ The inventory is formatted like this:
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
 
-const createList = (availableItems) => {
+const createList = (availableItems) => { // use a if statement to add to array if available = true
   // Solution code here...
+  availableItems.forEach()
 };
 
 /* ------------------------------------------------------------------------------------------------
