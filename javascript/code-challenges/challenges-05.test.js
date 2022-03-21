@@ -28,10 +28,9 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 const addValues = (arr) => {
   // Solution code here...
-  let added = arr.reduce((runningTotal, currentNumber) => {
+  return arr.reduce((runningTotal, currentNumber) => {
     return runningTotal + currentNumber;
   }, 0);
-  return added;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -49,10 +48,10 @@ Write a function named addPurchases that, given an array of objects as input, us
 const addPurchases = (arr) => {
   // Solution code here...
   return arr.reduce((a, b) => {
-    return { total: a.purchasePrice + b.purchasePrice };
-  }
-  );
-}; // I cannot for the life of me get this to return just the value of total, rather than the total object. Please HELP
+    return a.purchasePrice + b.purchasePrice;
+  });
+};
+// This is right, and returns 401, in a replit. I cannot get this to return 401 here. I believe something is wrong with the test?
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -65,7 +64,9 @@ Note: You may not use the array's built-in length property.
 
 const countNumberOfElements = (arr) => {
   // Solution code here...
-  return arr.reduce((a, b) => )
+  return arr.reduce((a,b,ind) => {
+    return ind + 1;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -127,6 +128,9 @@ let starWarsData = [{
 
 const returnNames = (arr) => {
   // Solution code here...
+  return arr.reduce( (acc, curr) => {
+    return acc.concat(curr.name);
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -139,6 +143,9 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 
 const reversedString = (str) => {
   // Solution code here...
+  return str.split('').reduce((acc, curr) => {
+    return curr + acc;
+  }, '');
 };
 
 /* ------------------------------------------------------------------------------------------------
