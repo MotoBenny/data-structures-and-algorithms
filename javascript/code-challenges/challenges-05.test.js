@@ -46,10 +46,9 @@ Write a function named addPurchases that, given an array of objects as input, us
 ------------------------------------------------------------------------------------------------ */
 
 const addPurchases = (arr) => {
-  // Solution code here...
   return arr.reduce((a, b) => {
-    return a.purchasePrice + b.purchasePrice;
-  });
+    return a + b.purchasePrice;
+  }, 0);
 };
 // This is right, and returns 401, in a replit. I cannot get this to return 401 here. I believe something is wrong with the test?
 
@@ -319,7 +318,7 @@ describe('Testing challenge 2', () => {
   });
 });
 
-xdescribe('Testing challenge 3', () => {
+describe('Testing challenge 3', () => {
   test('It should add the purchase price', () => {
     expect(addPurchases([{ item: 'switch', purchasePrice: 399 }, { item: 'toothpaste', purchasePrice: 2 }])).toStrictEqual(401);
     expect(addPurchases([])).toStrictEqual(0);
