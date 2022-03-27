@@ -9,7 +9,11 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 function returnTen(str){
   // Solution code here...
-  
+ arrays-2d
+  let slicedString = str.slice(-10);
+  let arr = slicedString.split('');
+  return arr;
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -28,6 +32,17 @@ return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
   // Solution code here...
+  let max = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      let min = matrix[i][j];
+      if (min > max) {
+        max = min;
+      }
+    }
+  }
+  return max;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -46,6 +61,13 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+
+  let sum = 0;
+  for (let i = 0; i < matrix.length; i++) {
+    for (let j = 0; j < matrix[i].length; j++) {
+      sum += matrix[i][j];
+    }
+  } return sum;
 };
 
 
@@ -72,8 +94,18 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
 const grandTotal = (stores) => {
+  const newArr = [];
+  stores.forEach(sale => {
+    sale.forEach((num, i) => {
+      if (newArr[i]){
+        newArr[i] += num;
+      } else {
+        newArr[i] = num;
+      }
+    });
+  });
+  return newArr;
   // Solution code here...
-
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -88,6 +120,12 @@ Write a function named salesData that uses forEach to iterate over the hourlySal
 
 const salesData = (hours, data) => {
   // Solution code here...
+  const newArr = [];
+  data.forEach((brentspiner, time) => {
+    let currObj = { 'sales': `${brentspiner} cookies`, 'time': `${hours[time]}`};
+    newArr.push(currObj);
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,9 +149,8 @@ const errands = [
   }
 ];
 
-const howManyTreats = (arr) => {
-  // Solution code here...
-};
+
+const howManyTreats = (arr) => arr[2].items[1].quantity;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
