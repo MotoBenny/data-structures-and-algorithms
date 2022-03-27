@@ -28,10 +28,7 @@ const courseInfo = {
   finalExam: true
 };
 
-const getCourseKeys = (obj) => {
-  // Solution code here...
-  return Object.keys(obj);
-};
+const getCourseKeys = (obj) => Object.keys(obj);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -42,6 +39,7 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => Object.values(obj).includes(value);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -57,13 +55,17 @@ HR has asked you to change the data to make it easier to print so that it looks 
 [
   'Grace Hopper: 222-303-5938',
   'Ada Lovelace: 222-349-9842',
-  'Alan Turing: 222-853-5933'
+  'Alan Turing: 222-853-5933'gu
 ]
 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-
+  const newArr = [];
+  Object.keys(obj).forEach(key => {
+    newArr.push(`${key}: ${obj[key]}`);
+  });
+  return newArr;
 };
 
 
@@ -119,7 +121,7 @@ const characters = [
 
 const getHouses = (arr) => {
   let houses = [];
-  arr.forEach(object => arr.push(object.values('house')));
+  arr.forEach(object => arr.push(object.house));
   return houses;
 };
 
@@ -137,7 +139,17 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-
+  let kid = 0;
+  arr.forEach(person => {
+    if (person.name === character) {
+      Object.keys(person).forEach((key, index) => {
+        if (key === 'children') {
+          kid = Object.values(person)[index].length;
+        }
+      });
+    }
+  });
+  return kid ? true : false;
 };
 
 /* ------------------------------------------------------------------------------------------------

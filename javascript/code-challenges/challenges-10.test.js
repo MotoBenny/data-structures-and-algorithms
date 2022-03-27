@@ -9,9 +9,11 @@ Write a function named returnTen, takes in a string and uses split and splice to
 
 function returnTen(str){
   // Solution code here...
+ arrays-2d
   let slicedString = str.slice(-10);
   let arr = slicedString.split('');
   return arr;
+
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -40,6 +42,7 @@ const findMax = (matrix) => {
     }
   }
   return max;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -58,6 +61,7 @@ return: 35
 ------------------------------------------------------------------------------------------------ */
 const totalSum = (matrix) => {
   // Solution code here...
+
   let sum = 0;
   for (let i = 0; i < matrix.length; i++) {
     for (let j = 0; j < matrix[i].length; j++) {
@@ -69,6 +73,7 @@ const totalSum = (matrix) => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
+
 You friend Pat has a chain of stores around the greater Seattle area. He specializes in selling salmon cookies. Pat has data for the hourly sales of cookies per hour for each store. He wants to create an array of the total number of cookies sold per hour for all of his stores combined.
 
 Write a function named grandTotal that adds up the cookies sales for each hour of operation for all of the stores combined. For example, the first element in the hourlySales array should be the sum of the cookies sold in the 9:00 a.m. hour at all five stores combined.
@@ -100,6 +105,7 @@ const grandTotal = (stores) => {
     });
   });
   return newArr;
+  // Solution code here...
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -142,6 +148,7 @@ const errands = [
     items: [{ name: 'Cans of food', quantity: 8 }, { name: 'Treats', quantity: 24 }, { name: 'Leash', quantity: 1 }]
   }
 ];
+
 
 const howManyTreats = (arr) => arr[2].items[1].quantity;
 
