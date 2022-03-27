@@ -28,10 +28,7 @@ const courseInfo = {
   finalExam: true
 };
 
-const getCourseKeys = (obj) => {
-  // Solution code here...
-  return Object.keys(obj);
-};
+const getCourseKeys = (obj) => Object.keys(obj);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -42,6 +39,7 @@ Write a function named checkValues that takes in an object and a value and retur
 ------------------------------------------------------------------------------------------------ */
 
 const checkValues = (obj, value) => Object.values(obj).includes(value);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -63,7 +61,8 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-
+  let newArr = Object.entries(obj);
+  console.log(newArr.concat(newArr[0],newArr[1],newArr[2]));
 };
 
 
