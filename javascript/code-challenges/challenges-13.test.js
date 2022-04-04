@@ -3,17 +3,14 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named longestString that takes in an array of strings and returns the index position of the longest string. 
+Write a function named longestString that takes in an array of strings and returns the index position of the longest string.
 ------------------------------------------------------------------------------------------------ */
 
-const longestString = (arr) => {
-  // Solution code here...
-  var longest = arr.reduce(
-    (a, b, i) => arr[a].length < b.length ? i : a,
-    0
-  );
-  return longest;
-};
+const longestString = (arr) => arr.indexOf(
+  arr.reduce((a, b) => (b.length > a.length ? b : a
+  ), '')
+);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -24,7 +21,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 
 ------------------------------------------------------------------------------------------------ */
 
 const firstLetters = (arr) => {
-  // Solution code here...
+  return arr.map((str) => {
+    return str = str[0];
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -35,24 +34,25 @@ Write a function named findHappiness that takes in an array of strings and retur
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this is great :)', ':)))))']
 ------------------------------------------------------------------------------------------------ */
 
-const findHappiness = (arr) => {
-  // Solution code here...
-};
+const findHappiness = (arr) => arr.filter(str => str.includes(':)'));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
 Write a function named standardizePhoneNumbers that takes in an array of phone number strings in (XXX) XXX-XXXX format and returns an array with the phone number strings in XXXXXXXXXX format.
 
-For example, (123) 456-7890 returns 1234567890
+For example, '(123) 456-7890', returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
   // Solution code here...
+  return arr.map((number) => {
+    return number.match(/\d/g).join('');
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
 
@@ -61,16 +61,18 @@ For example, 'abcdefg' returns 'bdf'
 
 const onlyOddChars = (str) => {
   // Solution code here...
+  return str.split('').filter((letter, idx) => idx %2 !== 0).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
   // Solution code here...
+  return arr.every(str => str.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
