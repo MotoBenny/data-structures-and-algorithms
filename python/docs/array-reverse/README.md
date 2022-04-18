@@ -18,7 +18,7 @@ and placing it in the new list at index 0, pushing the old value at index zero i
 
 
 ## Whiteboard process
-![WhiteBoard](https://github.com/MotoBenny/data-structures-and-algorithms/python/docs/array-reverse/Code Challenge #1 Reverse Array.png)
+![WhiteBoard](https://github.com/MotoBenny/data-structures-and-algorithms/python/docs/array-reverse/Code_Challenge_#1_Reverse_Array.png)
 
 
 ## Approach and Efficiency
