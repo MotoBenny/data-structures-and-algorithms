@@ -40,15 +40,14 @@ class LinkedList:
 
 
 class Node:
-"""
-next in this case is not exactly a reserved term, but it is used, so without the _ the linter got real angry
-we asked JB about the linter error, and were taught about adding _ to the end of the variable name.
-"""
+    """
+    next in this case is not exactly a reserved term, but it is used, so without the _ the linter got real angry
+    we asked JB about the linter error, and were taught about adding _ to the end of the variable name.
+    """
 
-
-def __init__(self, value, next_=None):
-    self.value = value
-    self.next = next_
+    def __init__(self, value, next_=None):
+        self.value = value
+        self.next = next_
 
 
 class TargetError:
