@@ -105,6 +105,33 @@ class LinkedList:
                 current.next = new_node
                 break
 
+    def kth_from_end(self, k):
+        """
+        Method finds the kth node from the end of a linked list, and returns its value
+        input:
+            k < the value from the end we want to find Type: int
+        output:
+            The value stored at that node within the linked list. exp: "apple"
+        """
+        length = 0
+        current = self.head
+        # count the total number of nodes in the linked list
+        while current:
+            current = current.next
+            length = length + 1
+
+        if k >= length:  # If K is greater than the length of our list > Error
+            raise TargetError
+        if k < 0:  # If k arg is negative number > Error
+            raise TargetError
+
+        if length >= k:
+            current = self.head
+            for i in range(length - k - 1):  # this minus one had me for a while... thanks replit.
+                current = current.next
+
+        return current.value
+
 
 class Node:
     """
