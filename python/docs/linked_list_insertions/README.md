@@ -23,6 +23,9 @@ adding three different methods to insert nodes.
 new_node.next to our current.next until current.value equals the value we are searching for.
 then assign our new node to current.next, to insert our new Node after the given val.
 
+## The code
+
+[Link](python/tests/code_challenges/test_linked_list_insertions.py)
 
 ## Solution
 You would run Linked_list.py in the terminal calling the methods within.
