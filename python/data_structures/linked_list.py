@@ -132,6 +132,9 @@ class LinkedList:
 
         return current.value
 
+    def zip_lists(self):
+        pass
+
 
 class Node:
     """
