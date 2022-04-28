@@ -132,6 +132,20 @@ class LinkedList:
 
         return current.value
 
+    @staticmethod
+    def zip_lists(list1, list2):
+        new_list = LinkedList()
+        list1 = list1.head
+        list2 = list2.head
+
+        while list1 is not None or list2 is not None:
+            new_list.append(list1)
+            list1 = list1.next
+            new_list.append(list2)
+            list2 = list2.next
+
+        return new_list # this returns none, and i dont get why.
+
 
 class Node:
     """
