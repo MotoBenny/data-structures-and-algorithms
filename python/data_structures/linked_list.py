@@ -12,18 +12,22 @@ class LinkedList:
         self.head = None
 
     def insert(self, value):
+        """
+        Takes a value, sets self.head (self is the linked list itself here)
+        think of this like Pre-pend add new node to start of Linked list.
+        """
         self.head = Node(value, self.head)
 
     def __str__(self):
-        # Take in a response and return a string of the current nodes while traversing
-        response = ""
+        # Take in a list and return a string of the current nodes while traversing
+        response = "" # "apple" > "pear" > Null
         current = self.head
         while current:
             response += f"{{ {str(current.value)} }} -> "
             current = current.next
         return response + "NULL"
 
-    def includes(self, value):
+    def includes(self, value): # apple or pear
         """
         source https://realpython.com/linked-lists-python/
         In our use case we dont want to use a yield here since we dont need to return anything other than a
@@ -33,9 +37,9 @@ class LinkedList:
         """
         current = self.head
         while current:
-            if current.value == value:
+            if current.value == value: # our search, compairs the value of the current node to the search value arg
                 return True
-            current = current.next
+            current = current.next # move to the next node, and repeat search
         return False
 
     def append(self, new_value):
@@ -46,13 +50,16 @@ class LinkedList:
         while we have values in the nodes, or .next does not = None, reassign held_value to held_value.next
         and traverse to the next node, until we have self.node == None.
         """
-        new_node = Node(new_value)
-        if self.head is None:
+        new_node = Node(new_value) # creating the new node to append, saved as new_node vari
+        if self.head is None: # if no linked list exsists now it does with our new node
             self.head = new_node
             return
         else:
-            held_value = self.head
-            while held_value.next is not None:
+            """
+
+            """
+            held_value = self.head # this holds the last node we looked at, to not lose it
+            while held_value.next: # this while is traversing through the list.
                 held_value = held_value.next
             held_value.next = new_node
 
@@ -78,7 +85,7 @@ class LinkedList:
             new_node.next = self.head  # new_node.next = the current node
             self.head = new_node  # set our new node as head
 
-        while current.next is not None:
+        while current.next:
             if current.next.value is value:  # if the next node is what we want to insert before
                 new_node.next = current.next  # reassign next pointer of new node, to the item to insert before
                 current.next = new_node  # reassign our current node as our newly formatted new node
@@ -100,10 +107,12 @@ class LinkedList:
         new_node = Node(new_value)
         current = self.head
         while current:
-            if current.value is value:
+            if current.value is value:  # where value is what to insert after
                 new_node.next = current.next
                 current.next = new_node
                 break
+            else:
+                current = current.next # we didnt have this traversal before so we couldnt move through the LL to check the next node
 
     def kth_from_end(self, k):
         """
@@ -125,10 +134,8 @@ class LinkedList:
         if k < 0:  # If k arg is negative number > Error
             raise TargetError
 
-        if length >= k:
-            current = self.head
-            for i in range(length - k - 1):  # this minus one had me for a while... thanks replit.
-                current = current.next
+        for i in range(length - k - 1):  # this minus one had me for a while... thanks replit.
+            current = current.next
 
         return current.value
 
@@ -144,7 +151,7 @@ class LinkedList:
             new_list.append(list2)
             list2 = list2.next
 
-        return new_list # this returns none, and i dont get why.
+        return new_list  # this returns none, and i dont get why.
 
 
 class Node:
