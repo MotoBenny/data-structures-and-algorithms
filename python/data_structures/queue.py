@@ -19,7 +19,7 @@ class Queue:
         if self.is_empty():  # if the Queue is empty our new node is the new head
             self.front = new  # our new node becomes the new Head of the list.
         else:
-            self.tail.next_ = new  # if the queue isnt empty our new node becomes the new tail (back of the queue)
+            self.tail.next = new  # if the queue isnt empty our new node becomes the new tail (back of the queue)
         self.tail = new  # out new tail (or back of the queue) is our new node, that weve just added.
         self.size += 1  # we increase our size by 1
 
