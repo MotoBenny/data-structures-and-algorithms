@@ -54,14 +54,10 @@ class LinkedList:
         if self.head is None: # if no linked list exsists now it does with our new node
             self.head = new_node
             return
-        else:
-            """
-
-            """
-            held_value = self.head # this holds the last node we looked at, to not lose it
-            while held_value.next: # this while is traversing through the list.
-                held_value = held_value.next
-            held_value.next = new_node
+        held_value = self.head # this holds the last node we looked at, to not lose it
+        while held_value.next: # this while is traversing through the list.
+            held_value = held_value.next
+        held_value.next = new_node
 
     def insert_before(self, value, new_value):
         """
@@ -139,19 +135,19 @@ class LinkedList:
 
         return current.value
 
-    @staticmethod
-    def zip_lists(list1, list2):
-        new_list = LinkedList()
-        list1 = list1.head
-        list2 = list2.head
-
-        while list1 is not None or list2 is not None:
-            new_list.append(list1)
-            list1 = list1.next
-            new_list.append(list2)
-            list2 = list2.next
-
-        return new_list  # this returns none, and i dont get why.
+    # @staticmethod
+    # def zip_lists(list1, list2):
+    #     new_list = LinkedList()
+    #     list1 = list1.head
+    #     list2 = list2.head
+    #
+    #     while list1 is not None or list2 is not None:
+    #         new_list.append(list1)
+    #         list1 = list1.next
+    #         new_list.append(list2)
+    #         list2 = list2.next
+    #
+    #     return new_list  # this returns none, and i dont get why.
 
 
 class Node:

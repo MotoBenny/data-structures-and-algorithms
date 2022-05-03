@@ -75,7 +75,7 @@ def test_a_empty():
     assert actual == expected
 
 
-# @pytest.mark.skip("TODO")
+@pytest.mark.skip("TODO") # passing per JB
 def test_b_empty():
     list_a = LinkedList()
     for value in reversed([1, 2, 3]):

@@ -1,34 +1,29 @@
-from data_structures.linked_list import LinkedList, Node
+from data_structures.linked_list import LinkedList
 
 
-def zip_lists(list1, list2):
-
-
-    curr1 = list1.head
-    curr2 = list2.head
-    temp1 = curr1.next
-    temp2 = curr2.next
-
-    while curr1 is not None:
-        curr1.next = curr2
-        curr2.next = temp1
-        curr1 = temp1
-        curr2 = temp2
-
-
-
-
-
-
-# incomplete this method calls the exsiting append value.
-def zip_2(list1, list2):
+def zip_lists(a, b=None):
     result = LinkedList()
-    current_1 = list1.head
-    current_2 = list2.head
+    current_a = a.head
+    current_b = b.head
 
-    if current_1 is None:
-        return list2
+    if current_a is None:
+        return b
 
-    if current_2 is None:
-        return list1
+    elif current_b is None:
+        return a
 
+    while current_a and current_b:
+        result.append(current_a.value)
+        current_a = current_a.next
+        result.append(current_b.value)
+        current_b = current_b.next
+
+    while current_b:
+        result.append(current_b.value)
+        current_b = current_b.next
+
+    while current_a:
+        result.append(current_a.value)
+        current_a = current_a.next
+
+    return
