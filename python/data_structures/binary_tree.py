@@ -4,8 +4,7 @@ class BinaryTree:
     """
 
     def __init__(self):
-        self.left = None
-        self.right = None
+        self.root = None
 
     def pre_order(self):
         """
@@ -48,8 +47,6 @@ class BinaryTree:
         climb(self.root, ordered_values)
 
         return ordered_values
-
-
 
     def post_order(self):
         # method returns a list of the values in the tree in appropriate order

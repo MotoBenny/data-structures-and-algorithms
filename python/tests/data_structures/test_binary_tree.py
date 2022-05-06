@@ -18,6 +18,11 @@ def test_exists():
     assert BinaryTree
 
 
+def test_tree_root_exists():
+    tree = BinaryTree()
+    assert tree.root is None
+
+
 # @pytest.mark.skip("TODO")
 def test_pre_order(tree):
     actual = tree.pre_order()
