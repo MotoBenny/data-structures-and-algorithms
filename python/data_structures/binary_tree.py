@@ -9,10 +9,17 @@ class BinaryTree:
         self.data = data
         pass
 
-    def some_method(self):
-        # method body here
+    def pre_order(self):
+        # method returns a list of the values in the tree in appropriate order
         pass
 
+    def in_order(self):
+        # method returns a list of the values in the tree in appropriate order
+        pass
+
+    def post_order(self):
+        # method returns a list of the values in the tree in appropriate order
+        pass
 
 class Node:
 
