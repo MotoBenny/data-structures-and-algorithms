@@ -4,7 +4,9 @@ class BinaryTree:
     """
 
     def __init__(self):
-        # initialization here
+        self.left = None
+        self.right = None
+        self.data = data
         pass
 
     def some_method(self):
@@ -13,4 +15,8 @@ class BinaryTree:
 
 
 class Node:
-    pass
+
+    def __init__(self, data):
+        self.data = data
+        self.left_node = None
+        self.right_node = None
