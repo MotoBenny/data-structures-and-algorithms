@@ -2,30 +2,32 @@ import pytest
 from data_structures.binary_tree import BinaryTree, Node
 
 
+def test_node_exists():
+    assert Node
+
+
+# @pytest.mark.skip("TODO")
 def test_exists():
     assert BinaryTree
 
 
 @pytest.mark.skip("TODO")
-def test_pre_order(tiny):
-    actual = []
-    tiny.pre_order(actual.append)
+def test_pre_order(tree):
+    actual = tree.pre_order()
     expected = ["a", "b", "d", "e", "c", "f", "g"]
     assert actual == expected
 
 
 @pytest.mark.skip("TODO")
-def test_in_order(tiny):
-    actual = []
-    tiny.in_order(actual.append)
+def test_in_order(tree):
+    actual = tree.in_order()
     expected = ["d", "b", "e", "a", "f", "c", "g"]
     assert actual == expected
 
 
 @pytest.mark.skip("TODO")
-def test_post_order(tiny):
-    actual = []
-    tiny.post_order(actual.append)
+def test_post_order(tree):
+    actual = tree.post_order()
     expected = ["d", "e", "b", "f", "g", "c", "a"]
     assert actual == expected
 
