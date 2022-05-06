@@ -12,8 +12,6 @@ class BinarySearchTree(BinaryTree):
         self.data = data
         pass
 
-
-    # TODO: Make or import applicable Node class.
     def insert(self, data):
         if self.data:
             if data < self.data:
@@ -31,3 +29,10 @@ class BinarySearchTree(BinaryTree):
 
     def find_max(self):
         pass
+
+class Node():
+
+    def __init__(self, data):
+        self.data = data
+        self.left_node = None
+        self.right_node = None
