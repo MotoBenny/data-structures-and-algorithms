@@ -6,10 +6,9 @@ class BinarySearchTree(BinaryTree):
     Put docstring here
     """
 
-    def __init__(self):
-        # initialization here
+    def __init__(self, data):
+        self.left = None
+        self.right = None
+        self.data = data
         pass
 
-    def some_method(self):
-        # method body here
-        pass
