@@ -51,23 +51,30 @@ def test_add_deeper(tree):
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_contains(tree):
     actual = tree.contains(15)
     expected = True
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_contains_deeper(tree):
     actual = tree.contains(5)
     expected = True
     assert actual == expected
 
 
-@pytest.mark.skip("TODO")
+# @pytest.mark.skip("TODO")
 def test_not_contains(tree):
     actual = tree.contains(100)
+    expected = False
+    assert actual == expected
+
+
+# no test for contains super low?
+def test_not_contains_low(tree):
+    actual = tree.contains(1)
     expected = False
     assert actual == expected
 
