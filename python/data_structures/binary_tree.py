@@ -65,6 +65,23 @@ class BinaryTree:
 
         return ordered_values
 
+    def find_max(self):
+
+        if self.root is None:
+            return None
+
+        def climb(root, max):
+            if root is None:
+                return max
+            if root.value > max:
+                max = root.value
+            max = climb(root.left, max)
+            max = climb(root.right, max)
+            return max
+
+        result = climb(self.root, 0)
+        return result
+
 
 class Node:
 
