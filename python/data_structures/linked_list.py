@@ -35,7 +35,9 @@ class LinkedList:
         True if value in linked list
         False if value not in linked list
         """
+        print(value)
         current = self.head
+        print(current.value)
         while current:
             if current.value == value: # our search, compairs the value of the current node to the search value arg
                 return True
