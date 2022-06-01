@@ -9,10 +9,14 @@ class Hashtable:
 
     def hash(self, key):
         sum_of_chars = 0
-        for char in key:
-            sum_of_chars += ord(char)
+        if type(key) is str:
+            for char in key:
+                sum_of_chars += ord(char)
+        elif type(key) is int:
+            sum_of_chars = key
         primed = sum_of_chars * 599
         index = primed % self.size
+
         return index
 
     def set(self, key, value):
@@ -35,7 +39,19 @@ class Hashtable:
         return None
 
     def contains(self, key):
-        return bool(self.get(key))
+        idx = self.hash(key)
+        bucket = self.buckets[idx]
+
+        if bucket is None:
+            return False
+
+        current = bucket.head
+
+        while current:
+            if current.value[0] == key:
+                return True
+            current = current.next
+        return False
 
     def keys(self):
         key_collection = set()
