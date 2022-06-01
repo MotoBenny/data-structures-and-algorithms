@@ -109,3 +109,11 @@ def test_set_update():
     actual = ht.get('cat')
     expected = 'a contemporary theatre'
     assert actual == expected
+
+
+def test_contains_zero():
+    ht = Hashtable()
+    ht.set(0, 'zero')
+    expected = True
+    actual = ht.contains(0)
+    assert actual == expected
